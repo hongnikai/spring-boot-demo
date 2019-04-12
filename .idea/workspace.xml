@@ -4,7 +4,8 @@
     <list default="true" id="e0134a9f-02a1-474d-a31a-c94c0217eb4e" name="Default" comment="idea git commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/SpringBootDemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SpringBootDemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/thread/atguigu/LatchDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/thread/atguigu/LatchDemo.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/SpringBootDemoApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="80">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -271,7 +272,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555062269755" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555062367658" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -518,7 +519,7 @@
       <workItem from="1554126322822" duration="5823000" />
       <workItem from="1554304546024" duration="928000" />
       <workItem from="1554950778943" duration="2567000" />
-      <workItem from="1555034245978" duration="6177000" />
+      <workItem from="1555034245978" duration="6325000" />
     </task>
     <task id="LOCAL-00001" summary="idea git commit">
       <created>1555059837429</created>
@@ -527,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555059837429</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="idea git commit">
+      <created>1555062315366</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555062315366</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -560,7 +568,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230767000" />
+    <option name="totallyTimeSpent" value="230915000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -575,7 +583,7 @@
     <frame x="-8" y="-8" width="1618" height="887" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49506348" visible="true" weight="0.21346153" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49506348" visible="true" weight="0.21346153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -586,7 +594,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.18820225" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7627346" weight="0.23033708" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.18733509" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.18733509" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.23726542" side_tool="true" weight="0.8988764" />
@@ -595,7 +603,7 @@
       <window_info anchor="bottom" id="TODO" order="9" sideWeight="0.67828417" weight="0.3286517" />
       <window_info anchor="bottom" id="Spring" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3286517" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.23614776" />
+      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.23614776" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -958,7 +966,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/SpringBootDemoApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
         </state>
       </provider>
     </entry>
