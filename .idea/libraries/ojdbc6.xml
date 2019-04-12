@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ojdbc6">
+    <CLASSES>
+      <root url="jar://G:/java学习笔记/java第二阶段/数据库/SQL/连接数据库/ojdbc6.jar!/" />
+      <root url="jar://G:/java学习笔记/java第二阶段/数据库/SQL/连接数据库/Oracle_10g_10.2.0.4_JDBC_ojdbc14.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
