@@ -16,8 +16,6 @@ public class Git {
         this.name = name;
     }
 
-    //hah
-    //甜
     public String getUsername() {
         return username;
     }
