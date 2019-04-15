@@ -6,8 +6,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-@Component
-@ConfigurationProperties(prefix = "person")
 public class person {
 
     private String lastName;
