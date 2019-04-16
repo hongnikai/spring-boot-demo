@@ -41,7 +41,6 @@ public class UpdateHbase2 {
         {
             System.out.println(tableName + "已存在");
             return ;
-            //System.exit(0);
         }
 
         HTableDescriptor tableDescriptor = new HTableDescriptor(TableName.valueOf(tableName));
