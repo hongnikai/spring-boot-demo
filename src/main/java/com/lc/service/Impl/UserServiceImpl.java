@@ -24,4 +24,9 @@ public class UserServiceImpl implements UserService{
             return userDao.selectPriceInnerJoinPriceOrder(map);
         }
 
+        @Transactional
+        public void insertUsers(List list) {
+            userDao.insertUsers(list);
+        }
+
 }

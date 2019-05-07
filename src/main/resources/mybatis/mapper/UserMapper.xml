@@ -17,6 +17,15 @@
             and p1.p_condition=#{num}
         </select>
 
+        <insert id="insertUsers" parameterType="java.util.List" >
+            insert into user ( id, name ) values
+            <foreach collection="user" item="item" index="index" separator=",">
+                (
+                #{item.id,jdbcType=VARCHAR},
+                #{item.name,jdbcType=VARCHAR}
+                )
+            </foreach>
 
+        </insert>
 
 </mapper>

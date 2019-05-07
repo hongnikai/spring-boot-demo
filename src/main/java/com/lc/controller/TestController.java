@@ -1,26 +1,43 @@
 package com.lc.controller;
 
 import com.lc.rss.Rss;
+import com.lc.service.OracleService;
+import com.lc.service.UserService;
+import com.lc.util.SizeofUtil;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.feed.synd.SyndFeedImpl;
 import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.SyndFeedOutput;
 import com.rometools.rome.io.XmlReader;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
+import net.sourceforge.sizeof.SizeOf;
+import sun.misc.Unsafe;
+
+import java.lang.instrument.Instrumentation;
+import java.lang.reflect.Array;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("testController")
 @SuppressWarnings("all")
 public class TestController {
 
+    @Autowired
+    private UserService userService;
 
+    @Autowired
+    private OracleService oracleService;
 
         @RequestMapping("/RssTest")
         public String RssTest() throws IOException, FeedException {
@@ -76,8 +93,40 @@ public class TestController {
 
         }
 
+    @RequestMapping("/insertTeamData")
+    public Object insertTeamData()throws Exception{
+//            Map map =new HashMap();
+//            map.put("id","1");
+//            map.put("name","小红");
+//            Map map2 =new HashMap();
+//            map2.put("id","2");
+//            map2.put("name","小黄");
+//            Map map3 =new HashMap();
+//            map3.put("id","3");
+//            map3.put("name","小绿");
+        List list = new ArrayList();
+        for(int i=0;i<20000;i++){
+            Map map = new HashMap();
+            map.put("id",i+" ");
+            map.put("name","第"+i+"个人");
+            list.add(map);
+        }
+        System.out.println(SizeofUtil.sizeof(list));
+            userService.insertUsers(list);
+            return list;
+        }
 
 
+    public static void main(String[] args) throws Exception {
+        TestController testController = new TestController();
+        testController.insertTeamData();
+    }
+
+    @RequestMapping("/oracleTest")
+    public Object oracleTest(){
+
+            return oracleService.selectTest();
+    }
 
 
 

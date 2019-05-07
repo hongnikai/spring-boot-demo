@@ -1,6 +1,7 @@
 package com.lc.dao;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -15,7 +16,6 @@ public interface UserDao {
    // @Select("select * from price p1 inner join price_order p2 on p1.p_id = p2.p_id where p2.open_id = #{open_id} and p1.p_condition=#{num}")
     List<Map<String,Object>> selectPriceInnerJoinPriceOrder(Map<String, Object> map);
 
-
-
+    void insertUsers(@Param("user")List user);
 
 }

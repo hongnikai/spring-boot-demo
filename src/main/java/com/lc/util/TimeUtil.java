@@ -20,7 +20,7 @@ public class TimeUtil {
 	}
 
 	/**
-	 *  @描述：
+	 *  @描述：     获取当前系统当前时间 long类型
 	 *  @return 	long类型当前系统时间   返回时间戳
 	 */
 	public static long timeMath(){
@@ -41,14 +41,20 @@ public class TimeUtil {
 		return ts;
 	}
 
-
+	/**
+	 * @deprecated   获取时间戳 转换成String 类型的时间
+	 * @param timeStamp
+	 * @return
+	 */
+	public static String getStringByTimeStamp(long timeStamp){
+		Date date = new Date(timeStamp);
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String d = simpleDateFormat.format(date);
+		return d;
+	}
 
 
 	public static void main(String[] args) {
-		TimeUtil t = new TimeUtil();
-		System.out.println(t.timeMath());
-
-
 	}
 
 

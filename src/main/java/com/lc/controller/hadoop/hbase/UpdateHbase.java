@@ -1,9 +1,11 @@
 package com.lc.controller.hadoop.hbase;
 
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.lc.util.TimeUtil;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.Cell;
@@ -22,6 +24,8 @@ import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.client.ResultScanner;
 import org.apache.hadoop.hbase.client.Scan;
+import org.hibernate.mapping.Map;
+
 @SuppressWarnings("ALL")
 public class UpdateHbase {
 
@@ -31,9 +35,9 @@ public class UpdateHbase {
     public UpdateHbase() throws Exception
     {
         conf = HBaseConfiguration.create();
-        System.setProperty("hadoop.home.dir", "http://192.168.1.7/server/hadoop/hadoop-2.7.2");
+        System.setProperty("hadoop.home.dir", "http://192.168.56.1/server/hadoop/hadoop-2.7.2");
         conf.addResource(new Path("/sever/hbase/hbase-1.4.9/conf/hbase-site.xml"));
-        conf.set("hbase.zookeeper.quorum", "192.168.1.7");
+        conf.set("hbase.zookeeper.quorum", "192.168.56.1");
         conf.set("hbase.zookeeper.property.clientPort", "2181");
         admin = new HBaseAdmin(conf);
     }
@@ -159,7 +163,7 @@ public class UpdateHbase {
             for (Cell cell : result.rawCells())
             {
                 System.out.println("RowName: " + new String(CellUtil.cloneRow(cell)) + " ");
-                System.out.println("Timetamp: " + cell.getTimestamp() + " ");
+                System.out.println("Timetamp: " + TimeUtil.getStringByTimeStamp(cell.getTimestamp())+ " ");
                 System.out.println("Column family: " + new String(CellUtil.cloneFamily(cell)) + " ");
                 System.out.println("row name: " + new String(CellUtil.cloneQualifier(cell)) + " ");
                 System.out.println("value: " + new String(CellUtil.cloneValue(cell)) + " ");
@@ -189,15 +193,18 @@ public class UpdateHbase {
     public static void main(String[] args) throws Exception{
         // TODO Auto-generated method stub
         String[] column = {"family1" , "family2"};
+
         try {
             UpdateHbase hbase = new UpdateHbase();
 //            hbase.deleteTable("students");
-             hbase.createTable("students", column);
+//             hbase.createTable("students", column);
 //           hbase.getAllData("scores");
 //           hbase.addOneRecord("students", "id1", "family1", "name", "Jack".getBytes());
-//           hbase.addOneRecord("students", "id1", "family1", "grade", "gaosan".getBytes());
+           hbase.addOneRecord("students", "id1", "family1", "grade", "lc".getBytes());
 //           hbase.getAllTables();
-//            hbase.getAllData("students");
+            hbase.getAllData("students");
+
+            //删除节点
 //            hbase.getValueFromKey("students", "id1");
 //            hbase.deleteRecord("students", "id1");
 //            hbase.addOneRecord("students", "id2", "family1", "name", "Holen".getBytes());

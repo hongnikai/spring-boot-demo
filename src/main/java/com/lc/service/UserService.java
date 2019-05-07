@@ -8,4 +8,6 @@ public interface UserService {
     Map<String,Object> selectAllUser();
 
     List<Map<String,Object>> selectPriceInnerJoinPriceOrder(Map<String, Object> map);
+
+    void insertUsers(List list);
 }

@@ -186,24 +186,28 @@ public class UpdateHbase2 {
     public static void main(String[] args) throws Exception{
         // TODO Auto-generated method stub
         String[] column = {"family1" , "family2"};
-        try {
+//        try {
             UpdateHbase hbase = new UpdateHbase();
-//            hbase.deleteTable("students");
-             hbase.createTable("students", column);
-//           hbase.getAllData("students");
+////            hbase.deleteTable("students");
+//             hbase.createTable("students", column);
+////           hbase.getAllData("students");
           hbase.addOneRecord("students", "id1", "family1", "name", "Jack".getBytes());
-           hbase.addOneRecord("students", "id1", "family1", "grade", "gaosan".getBytes());
-           hbase.getAllTables();
-            hbase.getAllData("students");
-//            hbase.getValueFromKey("students", "id1");
-//            hbase.deleteRecord("students", "id1");
-//            hbase.addOneRecord("students", "id2", "family1", "name", "Holen".getBytes());
-//            hbase.getValueFromKey("students", "id2");
-        } catch (Exception e) {
-            // TODO: handle exception
-            e.printStackTrace();
-        }
-
+//           hbase.addOneRecord("students", "id1", "family1", "grade", "gaosan".getBytes());
+//           hbase.getAllTables();
+//            hbase.getAllData("students");
+////            hbase.getValueFromKey("students", "id1");
+////            hbase.deleteRecord("students", "id1");
+////            hbase.addOneRecord("students", "id2", "family1", "name", "Holen".getBytes());
+////            hbase.getValueFromKey("students", "id2");
+//        } catch (Exception e) {
+//            // TODO: handle exception
+//            e.printStackTrace();
+//        }
+//        Table table = hbase.getTable(TableName.valueOf(<表名>));
+//        Put put = new Put(Bytes.toBytes(<主键字符串>));
+//        put.addColumn(FieldFamily, Bytes.toBytes(<字段名1>), Bytes.toBytes(<插入的值1>));
+//        put.addColumn(FieldFamily, Bytes.toBytes(<字段名2>), Bytes.toBytes(<插入的值2>));
+//        table.put(put);
 
 
     }
