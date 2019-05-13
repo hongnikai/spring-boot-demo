@@ -9,7 +9,7 @@ import java.util.Map;
 //@Mapper
 public interface UserDao {
 
-    //@Select("select * from user")
+//    @Select("select * from user")
     Map<String,Object> selectAllUser();
 
 

@@ -124,8 +124,8 @@ public class TestController {
 
     @RequestMapping("/oracleTest")
     public Object oracleTest(){
-
-            return oracleService.selectTest();
+            List list = oracleService.selectTest();
+            return list;
     }
 
 
