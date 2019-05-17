@@ -9,21 +9,21 @@ server:
 #      masks: yyyy-MM-dd hh:mm
 
 
-#spring:
-#    datasource:
-#        name: test
-#        url: jdbc:mysql://47.92.89.104:3306/choujiang?autoReconnect=true&failOverReadOnly=false&useUnicode=true&characterEncoding=utf-8
-#        username: root
-#        password: root
-##         使用druid数据源
-#        type: com.alibaba.druid.pool.DruidDataSource
-#        driver-class-name: com.mysql.jdbc.Driver
 spring:
-  datasource:
-      driver-class-name: oracle.jdbc.OracleDriver
-      url: jdbc:oracle:thin:@114.116.154.251:1521:helowin
-      username: sllq
-      password: 123456
+    datasource:
+        name: pis
+        url: jdbc:mysql://114.116.154.251:3306/pis?autoReconnect=true&failOverReadOnly=false&useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: 123456
+#         使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+#spring:
+#  datasource:
+#      driver-class-name: oracle.jdbc.OracleDriver
+#      url: jdbc:oracle:thin:@114.116.154.251:1521:helowin
+#      username: sllq
+#      password: 123456
 #jpa:
 #  hibernate:
 #     ddl-auto: update

@@ -28,4 +28,15 @@
 
         </insert>
 
+        <select id="findUserByAccountAndPassword" parameterType="string" resultType="com.lc.entity.User">
+            select * from user u
+            where u.username = #{username}
+            and u.password = #{password}
+        </select>
+
+        <select id="findUserByUserId" parameterType="string" resultType="com.lc.entity.User">
+            select * from user
+            where user.id = #{id}
+        </select>
+
 </mapper>

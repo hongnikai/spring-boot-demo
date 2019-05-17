@@ -26,6 +26,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 			③更新值  B
  * 			当且仅当 V == A 时， V = B; 否则，不会执行任何操作。
  */
+@SuppressWarnings("ALL")
 public class TestAtomicDemo {
 
     public static void main(String[] args) {

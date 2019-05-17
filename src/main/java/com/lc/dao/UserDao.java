@@ -1,5 +1,6 @@
 package com.lc.dao;
 
+import com.lc.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -17,5 +18,9 @@ public interface UserDao {
     List<Map<String,Object>> selectPriceInnerJoinPriceOrder(Map<String, Object> map);
 
     void insertUsers(@Param("user")List user);
+
+    User findUserByAccountAndPassword(@Param("username")String username, @Param("password") String password);
+
+    User findUserByUserId(@Param("id")String id);
 
 }

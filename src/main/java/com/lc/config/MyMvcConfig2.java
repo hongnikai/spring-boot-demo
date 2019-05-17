@@ -9,7 +9,12 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@Configuration
+/**
+ * 拦截器配置类   对应  LoginHandlerInterceptor
+ * 普通拦截器拦截所有请求,在redis session共享阶段先注释掉@Configuration注解
+ * @author lc
+ */
+//@Configuration
 public class MyMvcConfig2 implements WebMvcConfigurer{
 
 
@@ -28,16 +33,11 @@ public class MyMvcConfig2 implements WebMvcConfigurer{
 //    public void addInterceptors(InterceptorRegistry registry) {
 //        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
 //                .excludePathPatterns("/","/user/login","/static/**","/index.html"
-//                        ,"/asserts/css/signin.css","/webjars/bootstrap/4.1.3/css/bootstrap.css"
-//                ,"/asserts/img/bootstrap-solid.svg");
+//                       ,"/asserts/css/signin.css","/webjars/bootstrap/4.1.3/css/bootstrap.css"
+///               ,"/asserts/img/bootstrap-solid.svg");
+//
 //
 //    }
-
-
-
-
-
-
 
 
     //国际化

@@ -10,6 +10,7 @@ import java.util.concurrent.FutureTask;
  *
  *
  */
+@SuppressWarnings("all")
 public class TestCallable {
 
     public static void main(String[] args) {

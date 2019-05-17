@@ -1,6 +1,7 @@
 package com.lc.service.Impl;
 
 import com.lc.dao.UserDao;
+import com.lc.entity.User;
 import com.lc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,5 +29,18 @@ public class UserServiceImpl implements UserService{
         public void insertUsers(List list) {
             userDao.insertUsers(list);
         }
+
+        @Transactional
+        public User findUserByAccountAndPassword(String username, String password) {
+              User user =  userDao.findUserByAccountAndPassword(username,password);
+            return user;
+        }
+
+        @Transactional
+        public User findUserByUserId(String id) {
+            User user =userDao.findUserByUserId(id);
+            return user;
+        }
+
 
 }

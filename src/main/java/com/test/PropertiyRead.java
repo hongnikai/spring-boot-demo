@@ -3,8 +3,7 @@ package com.test;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Enumeration;
-import java.util.Properties;
+import java.util.*;
 
 /**
  * @author lc
@@ -71,20 +70,6 @@ public class PropertiyRead {
         return "";
     }
 
-
-
-//    String propertiesPath = "/com/lc/util/config.properties";  //properties文件路径
-//    Properties properties = new Properties();
-////		String data = properties.getProperty("webservice_url");
-//		 properties.load(new FileInputStream("E:\\workspace\\spring-boot-demo\\src\\main\\java\\com\\lc\\util\\config.properties"));
-//    //        properties.load(Test.class.getResourceAsStream(propertiesPath));
-//    Enumeration enum1 = properties.propertyNames();
-//        while (enum1.hasMoreElements()) {
-//        String strKey = (String) enum1.nextElement();
-//        String strValue = properties.getProperty(strKey);
-//        System.out.println(strKey+"="+strValue);
-//    }
-
     private PropertiyRead() { }
 
     private static class SingletonHelp {
@@ -94,5 +79,8 @@ public class PropertiyRead {
     public static PropertiyRead getInstance() {
         return SingletonHelp.instance;
     }
+
+
+
 
 }

@@ -5,6 +5,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+@SuppressWarnings("all")
 public class CAS {
 
 
@@ -19,6 +20,7 @@ public class CAS {
                     @Override
                     public void run() {
                         try {
+
 //                            System.out.println("票数还剩下："+ad.getSerialNumber() + " "+Thread.currentThread().getName());
                         } catch (Exception e) {
 
@@ -32,6 +34,7 @@ public class CAS {
         }
         executor.shutdown();  //关闭线程池
     }
+
 
 
 
