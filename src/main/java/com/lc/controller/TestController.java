@@ -3,6 +3,7 @@ package com.lc.controller;
 import com.lc.rss.Rss;
 import com.lc.service.OracleService;
 import com.lc.service.UserService;
+import com.lc.service.UserinfoService;
 import com.lc.util.SizeofUtil;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.feed.synd.SyndFeedImpl;
@@ -33,11 +34,11 @@ import java.util.Map;
 @SuppressWarnings("all")
 public class TestController {
 
-    @Autowired
-    private UserService userService;
+//    @Autowired
+//    private UserService userService;
 
-    @Autowired
-    private OracleService oracleService;
+//    @Autowired
+//    private OracleService oracleService;
 
         @RequestMapping("/RssTest")
         public String RssTest() throws IOException, FeedException {
@@ -93,41 +94,71 @@ public class TestController {
 
         }
 
-    @RequestMapping("/insertTeamData")
-    public Object insertTeamData()throws Exception{
-//            Map map =new HashMap();
-//            map.put("id","1");
-//            map.put("name","小红");
-//            Map map2 =new HashMap();
-//            map2.put("id","2");
-//            map2.put("name","小黄");
-//            Map map3 =new HashMap();
-//            map3.put("id","3");
-//            map3.put("name","小绿");
-        List list = new ArrayList();
-        for(int i=0;i<20000;i++){
-            Map map = new HashMap();
-            map.put("id",i+" ");
-            map.put("name","第"+i+"个人");
-            list.add(map);
-        }
-        System.out.println(SizeofUtil.sizeof(list));
-            userService.insertUsers(list);
-            return list;
-        }
+//    @RequestMapping("/insertTeamData")
+//    public Object insertTeamData()throws Exception{
+////            Map map =new HashMap();
+////            map.put("id","1");
+////            map.put("name","小红");
+////            Map map2 =new HashMap();
+////            map2.put("id","2");
+////            map2.put("name","小黄");
+////            Map map3 =new HashMap();
+////            map3.put("id","3");
+////            map3.put("name","小绿");
+//        List list = new ArrayList();
+//        for(int i=0;i<20000;i++){
+//            Map map = new HashMap();
+//            map.put("id",i+" ");
+//            map.put("name","第"+i+"个人");
+//            list.add(map);
+//        }
+//        System.out.println(SizeofUtil.sizeof(list));
+//            userService.insertUsers(list);
+//            return list;
+//        }
 
 
-    public static void main(String[] args) throws Exception {
-        TestController testController = new TestController();
-        testController.insertTeamData();
+//    public static void main(String[] args) throws Exception {
+//        TestController testController = new TestController();
+//        testController.insertTeamData();
+//    }
+
+//    @RequestMapping("/oracleTest")
+//    public Object oracleTest(){
+//            List list = oracleService.selectTest();
+//            return list;
+//    }
+//
+//    @RequestMapping("/returnJson")
+//    public Object returnJson(){
+//
+//            Map map = new HashMap();
+//            map.put("name","zhangsan");
+//            List<Map<String,Object>>  list = userService.selectAllUser();
+//            if(list.size()>0){
+//
+//                System.out.println("ceshi");
+//
+//            }
+//        System.out.println(list.size());
+//        System.out.println(list!=null);
+//            return map;
+//    }
+
+    @Autowired
+    private UserinfoService userinfoService;
+
+
+    @RequestMapping("/test")
+    public Object test(){
+        return userinfoService.deleteUser(0);
     }
 
-    @RequestMapping("/oracleTest")
-    public Object oracleTest(){
-            List list = oracleService.selectTest();
-            return list;
+    @RequestMapping("/testData")
+    public String testData(){
+
+
+        return "sssss";
     }
-
-
 
 }

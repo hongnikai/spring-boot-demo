@@ -19,10 +19,11 @@
 	</parent>
 
 	<properties>
-	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	<java.version>1.8</java.version>
-</properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
 
 	<dependencies>
 
@@ -36,13 +37,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
-		<!--<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc6</artifactId>
-			<version>11.2.0.1.0</version>
-			&lt;!&ndash;<version>10.2.0.1.0</version>&ndash;&gt;
-		</dependency>-->
 
 		<!--spring boot 进行单元测试的模块-->
 		<dependency>
@@ -63,11 +57,11 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 
-		<!--<dependency>-->
-			<!--<groupId>com.oracle</groupId>-->
-			<!--<artifactId>ojdbc6</artifactId>-->
-			<!--<version>11.2.0.1.0</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.1.0</version>
+		</dependency>
 
 		<!--模板引擎 thymeleaf-->
 		<dependency>
@@ -114,10 +108,16 @@
 			<artifactId>shiro-core</artifactId>
 			<version>1.2.2</version>
 		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.alibaba</groupId>-->
+			<!--<artifactId>druid</artifactId>-->
+			<!--<version>1.1.5</version>-->
+		<!--</dependency>-->
+		<!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
-			<version>0.2.23</version>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.1.10</version>
 		</dependency>
 		<!-- shiro权限控制框架 -->
 		<dependency>
@@ -210,11 +210,13 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<version>2.0.4.RELEASE</version>
 		</dependency>
 		<!--spring session 与redis应用基本环境配置,需要开启redis后才可以使用，不然启动Spring boot会报错 -->
 		<dependency>
 			<groupId>org.springframework.session</groupId>
 			<artifactId>spring-session-data-redis</artifactId>
+			<version>2.0.5.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.session</groupId>
@@ -229,7 +231,64 @@
 			<version>1.2.47</version>
 		</dependency>
 
-    </dependencies>
+		<!--引用sharding jdbc 数据库分片-->
+		<dependency>
+			<groupId>com.dangdang</groupId>
+			<artifactId>sharding-jdbc-core</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.dangdang</groupId>-->
+			<!--<artifactId>sharding-jdbc-config-yaml</artifactId>-->
+			<!--<version>1.5.3</version>-->
+		<!--</dependency>-->
+
+		<!-- 添加对aop支持的依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+			<version>1.5.7.RELEASE</version>
+		</dependency>
+
+		<!-- jta  atomikos 分布式事务管理依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jta-atomikos</artifactId>
+			<version>1.5.7.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+
+		<!-- 引入 swagger等相关依赖 -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>0.10.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>0.10.5</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>0.10.5</version>
+			<scope>runtime</scope>
+		</dependency>
+
+	</dependencies>
 	<!-- 这个插件，可以将应用打包成一个可执行的jar包；-->
 	<build>
 		<plugins>

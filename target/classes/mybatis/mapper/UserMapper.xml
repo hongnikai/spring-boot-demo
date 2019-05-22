@@ -5,7 +5,7 @@
 
         <select id="selectAllUser" resultType="map">
             select *
-            from user
+            from user where 1=0
         </select>
 
         <select id="selectPriceInnerJoinPriceOrder" parameterType="map" resultType="map">

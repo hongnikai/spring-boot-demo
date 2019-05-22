@@ -11,7 +11,7 @@ import java.util.Map;
 public interface UserDao {
 
 //    @Select("select * from user")
-    Map<String,Object> selectAllUser();
+    List<Map<String,Object>> selectAllUser();
 
 
    // @Select("select * from price p1 inner join price_order p2 on p1.p_id = p2.p_id where p2.open_id = #{open_id} and p1.p_condition=#{num}")

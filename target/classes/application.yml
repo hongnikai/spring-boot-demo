@@ -9,15 +9,16 @@ server:
 #      masks: yyyy-MM-dd hh:mm
 
 
-spring:
-    datasource:
-        name: pis
-        url: jdbc:mysql://114.116.154.251:3306/pis?autoReconnect=true&failOverReadOnly=false&useUnicode=true&characterEncoding=utf-8
-        username: root
-        password: 123456
-#         使用druid数据源
-        type: com.alibaba.druid.pool.DruidDataSource
-        driver-class-name: com.mysql.jdbc.Driver
+#spring:
+#    datasource:
+#        name: pis
+#        url: jdbc:mysql://114.116.154.251:3306/pis?autoReconnect=true&failOverReadOnly=false&useUnicode=true&characterEncoding=utf-8
+#        username: root
+#        password: 123456
+##         使用druid数据源
+#        type: com.alibaba.druid.pool.DruidDataSource
+#        driver-class-name: com.mysql.jdbc.Driver
+
 #spring:
 #  datasource:
 #      driver-class-name: oracle.jdbc.OracleDriver
@@ -56,13 +57,16 @@ spring:
 
 
 
-## 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
+### 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
+#mybatis:
+#    config-location: classpath:mybatis/mybatis-config.xml
+#    mapper-locations: classpath:mybatis/mapper/*.xml
+
+## 该配置节点为独立的节点
 mybatis:
-    config-location: classpath:mybatis/mybatis-config.xml
-    mapper-locations: classpath:mybatis/mapper/*.xml
-
-
-
+  mapper-locations: classpath:mybatis/mapper/*.xml  # 注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.lc.bean # 注意：对应实体类的路径
+  config-location: classpath:mybatis/mybatis-config.xml
 
 
 #  mapper-locations: classpath:mapping/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
@@ -87,3 +91,51 @@ mybatis:
 #  dog:
 #    name: 小狗
 #    age: 2
+
+
+## 配置数据源相关信息
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.xa.DruidXADataSource
+    druid:
+      ## 连接池配置
+      one:
+        ## JDBC配置
+        name: DBconfig1
+        url: jdbc:mysql://114.116.154.251:3306/pis?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root
+        password: 123456
+        driverClassName: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: true
+        testOnReturn: true
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+      two:
+        ## JDBC配置
+        name: DBconfig2
+        url: jdbc:mysql://172.20.10.5:3306/pis?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root
+        password: 123456
+        driverClassName: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: true
+        testOnReturn: true
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20

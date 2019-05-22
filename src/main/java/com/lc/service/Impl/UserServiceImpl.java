@@ -10,13 +10,13 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Map;
 
-@Service(value = "userService")
+//@Service(value = "userService")
 public class UserServiceImpl implements UserService{
 
         @Autowired
         private UserDao userDao;
 
-        public Map<String,Object> selectAllUser(){
+        public List<Map<String,Object>> selectAllUser(){
             return userDao.selectAllUser();
         }
 

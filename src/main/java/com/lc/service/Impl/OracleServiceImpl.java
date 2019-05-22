@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Map;
 
-@Service(value = "oracleServiceo")
+//@Service(value = "oracleServiceo")
 public class OracleServiceImpl implements OracleService {
 
     @Autowired
